@@ -21,11 +21,11 @@ namespace PARTIA
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(support);
+                }
                     if (SupportAdded != null)
                     {
                         SupportAdded(this, new EventArgs());
                     }
-                }
             }
             else
             {
@@ -55,12 +55,13 @@ namespace PARTIA
         }
 
         public override Statistics GetStatistics()
+        
         {
             var statistics = new Statistics();
 
-            var supportFromFile = this.ReadSupportFromFile();
+            var supportsFromFile = this.ReadSupportFromFile();
 
-            foreach (var support in supportFromFile)
+            foreach (var support in supportsFromFile)
             {
                 statistics.AddSupport(support);
             }
@@ -68,23 +69,25 @@ namespace PARTIA
         }
 
         private List<float> ReadSupportFromFile()
+       
         {
-            var support = new List<float>();
-            if (File.Exists($"(fileName)"))
+
+            var supports = new List<float>();
+            if (File.Exists($"{fileName}"))
             {
+                
                 using (var reader = File.OpenText(fileName))
                 {
                     var line = reader.ReadLine();
                     while (line != null)
                     {
                         var number = float.Parse(line);
-                        support.Add(number);
+                        supports.Add(number);
                         line = reader.ReadLine();
-
                     }
                 }
             }
-            return support;
+            return supports;
         }
     }
 }

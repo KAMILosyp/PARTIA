@@ -17,7 +17,7 @@ PoliticalParty.SupportAdded += PoliticalPartySupportAdded;
 
 void PoliticalPartySupportAdded(object sender, EventArgs args)
 {
-    Console.WriteLine("Dodano nowe poparcie");
+    Console.WriteLine("Support Add");
 }
 var Party = "MWD - My Wam Damy";
 Console.WriteLine("This program is for MWD - My Wam Damy party");
@@ -25,7 +25,7 @@ Console.WriteLine($"Enter support in choosing month for {Party} ");
 
 
 while (true)
-{
+    {
    
     Console.WriteLine($"Enter support {Party} ");
     var support = Console.ReadLine();
@@ -44,9 +44,10 @@ while (true)
         Console.WriteLine();
         Console.WriteLine("Enter next support");
     }
-
-    var statistics = PoliticalParty.GetStatistics();
+    Console.WriteLine("Result of support");
+    Console.WriteLine();
+        var statistics = PoliticalParty.GetStatistics();
         Console.WriteLine($"Average: {statistics.Average}");
         Console.WriteLine($"Min: {statistics.Min}");
         Console.WriteLine($"Max: {statistics.Max}");
-  
+
