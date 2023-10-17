@@ -2,7 +2,7 @@
 
 namespace PARTIA
 {
-    public abstract class PoliticalPartyBase : IPoliticalParty 
+    public abstract class PoliticalPartyBase : IPoliticalParty
     {
         public delegate void SupportAddedDelegate(object sender, EventArgs args);
 
@@ -15,11 +15,28 @@ namespace PARTIA
         public string Name { get; private set; }
 
         public abstract void AddSupport(float support);
-        public abstract void AddSupport(string support);
 
-        public abstract void AddSupport(int support);
-
-        public abstract void AddSupport(double support);
+        public void AddSupport(double support)
+        {
+            float result = (float)support;
+            this.AddSupport(result);
+        }
+        public  void AddSupport(string support)
+        {
+            if (float.TryParse(support, out float result))
+            {
+                this.AddSupport(result);
+            }
+            else
+            {
+                throw new Exception("Ivalid support value");
+            }
+        }
+        public void AddSupport(int support)
+        {
+            float result = (float)support;
+            this.AddSupport(result);
+        }
 
         public abstract Statistics GetStatistics();
     }

@@ -14,10 +14,10 @@ namespace PARTIA
             : base(name)
         {
         }
-       
+
         public override void AddSupport(float support)
         {
-            if (support > 0 && support <= float.MaxValue)
+            if (support > 0)
             {
                 this.support.Add(support);
             }
@@ -26,35 +26,14 @@ namespace PARTIA
                 throw new Exception("Invalid support value");
             }
         }
-        public override void AddSupport(double support)
-        {
-            float result = (float)support;
-            this.AddSupport(result);
-        }
-        public override void AddSupport(string support)
-        {
-            if (float.TryParse(support, out float result))
-            {
-                this.AddSupport(result);
-            }
-            else
-            {
-                throw new Exception("Ivalid support value");
-            }
-        }
-        public  override void AddSupport(int support)
-        {
-            float result = (float)support;
-            this.AddSupport(result);
-        }
 
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
-            foreach (var support in this.support) 
+            foreach (var support in this.support)
             {
-            statistics.AddSupport(support);
+                statistics.AddSupport(support);
             }
 
             return statistics;

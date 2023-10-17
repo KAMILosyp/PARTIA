@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using PARTIA;
 
 namespace TestPoliticalParty
@@ -17,7 +18,7 @@ namespace TestPoliticalParty
             Assert.AreEqual(37, stat.Sum);
             Assert.AreEqual(32, stat.Max);
             Assert.AreEqual(1, stat.Min);
-            Assert.AreEqual(12.33d, stat.Average,2);
+            Assert.AreEqual(12.33d, stat.Average, 2);
         }
     }
 }

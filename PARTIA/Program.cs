@@ -11,7 +11,8 @@ Console.WriteLine("*************************************************************
 
 
 
-var PoliticalParty = new PoliticalPartyInFile("MWD - My Wam Damy");
+var PoliticalParty = new PoliticalPartyInFile("MWD - My Wam Damy Party");
+var partyName = PoliticalParty.Name;
 
 PoliticalParty.SupportAdded += PoliticalPartySupportAdded;
 
@@ -19,17 +20,17 @@ void PoliticalPartySupportAdded(object sender, EventArgs args)
 {
     Console.WriteLine("Support Add");
 }
-var Party = "MWD - My Wam Damy";
-Console.WriteLine("This program is for MWD - My Wam Damy party");
-Console.WriteLine($"Enter support in choosing month for {Party} ");
+
+Console.WriteLine($"This program is for {partyName}");
+
 
 
 while (true)
-    {
-   
-    Console.WriteLine($"Enter support {Party} ");
+{
+
+    Console.WriteLine($"Enter support for {partyName} ");
     var support = Console.ReadLine();
-    if(support == "F" || support == "f")
+    if (support == "F" || support == "f")
     {
         break;
     }
@@ -41,13 +42,13 @@ while (true)
     {
         Console.WriteLine($"invalid format:{ex.Message}");
     }
-        Console.WriteLine();
-        Console.WriteLine("Enter next support");
-    }
-    Console.WriteLine("Result of support");
     Console.WriteLine();
-        var statistics = PoliticalParty.GetStatistics();
-        Console.WriteLine($"Average: {statistics.Average}");
-        Console.WriteLine($"Min: {statistics.Min}");
-        Console.WriteLine($"Max: {statistics.Max}");
+    Console.WriteLine("Enter next support");
+}
+Console.WriteLine("Result of support");
+Console.WriteLine();
+var statistics = PoliticalParty.GetStatistics();
+Console.WriteLine($"Average: {statistics.Average}");
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
 

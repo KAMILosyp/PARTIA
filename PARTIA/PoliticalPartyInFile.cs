@@ -15,47 +15,25 @@ namespace PARTIA
 
         public override void AddSupport(float support)
         {
-            if (support > 0 && support <= float.MaxValue)
+            if (support > 0)
             {
 
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(support);
                 }
-                    if (SupportAdded != null)
-                    {
-                        SupportAdded(this, new EventArgs());
-                    }
+                if (SupportAdded != null)
+                {
+                    SupportAdded(this, new EventArgs());
+                }
             }
             else
             {
                 throw new Exception("Invalid support value");
             }
         }
-        public override void AddSupport(double support)
-        {
-            float result = (float)support;
-            this.AddSupport(result);
-        }
-        public override void AddSupport(string support)
-        {
-            if (float.TryParse(support, out float result))
-            {
-                this.AddSupport(result);
-            }
-            else
-            {
-                throw new Exception("Ivalid support value");
-            }
-        }
-        public override void AddSupport(int support)
-        {
-            float result = (float)support;
-            this.AddSupport(result);
-        }
-
         public override Statistics GetStatistics()
-        
+
         {
             var statistics = new Statistics();
 
@@ -69,13 +47,13 @@ namespace PARTIA
         }
 
         private List<float> ReadSupportFromFile()
-       
+
         {
 
             var supports = new List<float>();
             if (File.Exists($"{fileName}"))
             {
-                
+
                 using (var reader = File.OpenText(fileName))
                 {
                     var line = reader.ReadLine();
