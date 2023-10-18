@@ -9,8 +9,8 @@ namespace PARTIA
 
         public float Sum { get; private set; }
 
-        public int Count { get;  private set; }
-   
+        public int Count { get; private set; }
+
 
         public Statistics()
         {
@@ -30,9 +30,9 @@ namespace PARTIA
         {
             get
             {
-                return(this.Sum  / this.Count);
+                return (this.Sum / this.Count);
             }
         }
-        
+
     }
 }
