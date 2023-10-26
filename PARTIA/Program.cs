@@ -1,9 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 using PARTIA;
-using System.Collections.Generic;
-using System;
-using System.ComponentModel.Design;
-using System.Diagnostics.CodeAnalysis;
+
 
 Console.WriteLine("Welcome in program POLITICAL PARTY STAT");
 Console.WriteLine("TTHIS PROGRAM WITHDRAW STATISTIC FOR POLITICAL PARTY");

@@ -1,5 +1,4 @@
-﻿
-using static PARTIA.PoliticalPartyBase;
+﻿using static PARTIA.PoliticalPartyBase;
 
 namespace PARTIA
 {

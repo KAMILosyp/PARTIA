@@ -1,11 +1,7 @@
-﻿using System.Net.NetworkInformation;
-using System.Security.Cryptography.X509Certificates;
-
-namespace PARTIA
+﻿namespace PARTIA
 {
     public class PoliticalPartyInMemory : PoliticalPartyBase
     {
-
         public override event SupportAddedDelegate SupportAdded;
 
         private List<float> support = new List<float>();
@@ -20,6 +16,11 @@ namespace PARTIA
             if (support > 0)
             {
                 this.support.Add(support);
+            }
+            if (SupportAdded != null)
+            { 
+                SupportAdded(this, new EventArgs());
+
             }
             else
             {

@@ -1,6 +1,4 @@
-﻿
-
-namespace PARTIA
+﻿namespace PARTIA
 {
     public abstract class PoliticalPartyBase : IPoliticalParty
     {

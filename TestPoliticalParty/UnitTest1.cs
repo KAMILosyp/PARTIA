@@ -14,7 +14,6 @@ namespace TestPoliticalParty
             PoliticalParty.AddSupport(1);
 
             var stat = PoliticalParty.GetStatistics();
-
             Assert.AreEqual(37, stat.Sum);
             Assert.AreEqual(32, stat.Max);
             Assert.AreEqual(1, stat.Min);

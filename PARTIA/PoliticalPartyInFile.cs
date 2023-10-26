@@ -1,6 +1,4 @@
-﻿
-
-namespace PARTIA
+﻿namespace PARTIA
 {
     public class PoliticalPartyInFile : PoliticalPartyBase
     {
