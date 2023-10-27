@@ -27,7 +27,6 @@
                 throw new Exception("Invalid support value");
             }
         }
-
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();

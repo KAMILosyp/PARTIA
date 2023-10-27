@@ -15,7 +15,6 @@
         {
             if (support > 0)
             {
-
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(support);

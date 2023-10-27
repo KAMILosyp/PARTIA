@@ -20,8 +20,6 @@ void PoliticalPartySupportAdded(object sender, EventArgs args)
 
 Console.WriteLine($"This program is for {partyName}");
 
-
-
 while (true)
 {
 

@@ -1,7 +1,7 @@
 ﻿namespace PARTIA
 {
-    public abstract class PoliticalPartyBase : IPoliticalParty
-    {
+        public abstract class PoliticalPartyBase : IPoliticalParty
+        {
         public delegate void SupportAddedDelegate(object sender, EventArgs args);
 
         public abstract event SupportAddedDelegate SupportAdded;
